@@ -1,0 +1,10 @@
+create table cart(id int NOT NULL,
+product_id int,
+variant_id int,
+quantity double,
+price double,
+user_id int,
+PRIMARY KEY(id),
+FOREIGN KEY (user_id) REFERENCES users(id),
+FOREIGN KEY (product_id) REFERENCES products(id),
+FOREIGN KEY (variant_id) REFERENCES variants(id));
