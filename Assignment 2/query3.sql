@@ -1,2 +1,1 @@
-SELECT COUNT(employee_id_fk) As No_of_Employees,SUM(pct_time) As work_together FROM works
-GROUP BY department_id_fk HAVING SUM(pct_time)>=100;
+SELECT GROUP_CONCAT(e.employee_name) As employe_Names,SUM(w.pct_time) As work_together from employees e,works w where e.employee_id=w.employee_id_fk GROUP BY w.department_id_fk HAVING SUM(pct_time)>=100;
